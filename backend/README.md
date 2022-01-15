@@ -1,19 +1,13 @@
-user = {
-
-}
-
 customer {
 id,
-userType: string, // customer
-name: string,
-cardId: string,
+firstName: string,
+lastName: string,
+cardId: number,
 email: string,
 password: string,
-insurance: boolean,
-orders: [#1, #5, #6],
+prescription: [],
+orders: [#1],
 }
-
-// One users can place many orders
 
 pharmacy = {
 id,
@@ -21,18 +15,19 @@ name: string,
 orders: [],
 }
 
-// A pharmacy can have many orders
-
 order = {
 id,
 orderedBy: ,
 soldBy: ,
 time: ?? (dont know yet),
-prescription: URL,
+
 pickup: boolean, // true, ->
-deliveredBy: ,
 }
 
+order {
+id: 1,
+orderedBY: user1
+}
 //
 
 - create an account

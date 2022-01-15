@@ -2,8 +2,10 @@ const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const config = require("./utils/config");
-
+const userRouter = require("./routes/loginRouter");
 const app = express();
+
+app.use("/users", userRouter);
 
 mongoose
   .connect(config.MONGO_CONNECTION, {

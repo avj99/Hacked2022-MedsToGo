@@ -10,6 +10,7 @@ orderRouter.post("/", async (request, response) => {
         firstName: body.firstName,
         lastName: body.lastName,
         prescription: body.prescription,
+        deliveryType: body.deliveryType
       });
     
     const savedOrder = await order.save();

@@ -4,6 +4,7 @@ const orderSchema = new mongoose.Schema({
     firstName: String,
     lastName: String,
     prescription: String,
+    deliveryType: String
   });
 
   orderSchema.set("toJSON", {

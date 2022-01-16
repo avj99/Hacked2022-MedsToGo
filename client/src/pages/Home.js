@@ -3,15 +3,6 @@ import { Link } from "react-router-dom";
 import "../assets/bootstrap/css/bootstrap.min.css"
 
 export default function Home(){
-
-
-    function handleFormInput(e){
-      
-    }
-
-    const inputRef = useRef()
-
-
     return (
             <div id="wrapper">
               <nav className="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">

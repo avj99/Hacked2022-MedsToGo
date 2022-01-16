@@ -1,10 +1,21 @@
-import React from "react";
+import React, {useState, useRef, useEffect}  from "react";
 import { Link } from "react-router-dom";
 import "../assets/bootstrap/css/bootstrap.min.css"
+// import { useState } from "react";
+
 
 const Login = () => {
+  const [email, setEmail] = useState("")
+  const emailRef = useRef()
+  const passwordRef = useRef()
 
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // console.log(e.target.email);
+    console.log(emailRef.current.value)
+    console.log(passwordRef.current.value)
+    // console.log(e.target.email);
+  }
 
   return(
       <div className="container">
@@ -21,14 +32,14 @@ const Login = () => {
                       <div className="text-center">
                         <h4 className="text-dark mb-4">Welcome Back!</h4>
                       </div>
-                      <form className="user">
-                        <div className="mb-3"><input className="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." name="email" /></div>
-                        <div className="mb-3"><input className="form-control form-control-user" type="password" id="exampleInputPassword" placeholder="Password" name="password" /></div>
+                      <form className="user" onSubmit={e => handleSubmit(e)}>
+                        <div className="mb-3"><input ref={emailRef} className="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." name="email"/></div>
+                        <div className="mb-3"><input ref={passwordRef} className="form-control form-control-user" type="password" id="exampleInputPassword" placeholder="Password" name="password"/></div>
                         <div className="mb-3">
                           <div className="custom-control custom-checkbox small">
                             <div className="form-check"><input className="form-check-input custom-control-input" type="checkbox" id="formCheck-1" /><label className="form-check-label custom-control-label" htmlFor="formCheck-1">Remember Me</label></div>
                           </div>
-                        </div><button className="btn btn-primary d-block btn-user w-100" type="submit"><Link to="/"><div>Login</div></Link></button>
+                        </div><button className="btn btn-primary d-block btn-user w-100" type="submit">Login</button>
                         <hr/>
                       </form>
                       <div className="text-center"><a className="small" href="forgot-password.html">Forgot Password?</a></div>

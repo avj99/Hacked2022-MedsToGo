@@ -6,6 +6,8 @@ const config = require("./utils/config");
 const loginRouter = require("./routes/loginRouter");
 const userRouter = require("./routes/userRouter");
 const prescriptionRouter = require("./routes/prescriptionRouter");
+const pharmacyRouter = require("./routes/pharmacyRouter");
+
 
 const app = express();
 
@@ -27,6 +29,8 @@ app.use(express.json());
 app.use("/api/login", loginRouter);
 app.use("/users", userRouter);
 app.use("/prescription", prescriptionRouter)
+app.use("/pharmacy", pharmacyRouter)
+
 // app.get("/", (request, response) => {response.send('hello world')})
 
 module.exports = app;

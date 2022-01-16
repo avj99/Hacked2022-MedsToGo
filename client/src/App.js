@@ -1,7 +1,10 @@
 import Home from './pages/Home';
 import Login from './pages/Login';
-import React from 'react';
+import Profile from './pages/Profile'
 import { render } from "react-dom";
+import { useState } from "react";
+// import Login from "./pages/Login"
+
 
 import {
   BrowserRouter,
@@ -9,13 +12,19 @@ import {
   Route
 } from "react-router-dom";
 
-function App(){
+function App() {
+  const [token, setToken] = useState();
+
+  // if (!token) {
+  //   return <Login setToken={setToken} />
+  // }
+
   return(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login/>} />
-      {/* <Route path="invoices" element={<Invoices />} /> */}
+      <Route path="/profile" element={<Profile/>} />
     </Routes>
   </BrowserRouter>)
 }

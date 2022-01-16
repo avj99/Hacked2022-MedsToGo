@@ -1,15 +1,17 @@
 import React from 'react'
+import logo from '../assets/img/clipboard-image-1.png'
+import '../assets/bootstrap/css/bootstrap.min.css'
 
 export default function Home(){
     return (
             <div id="wrapper">
               <nav className="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
-                <div className="container-fluid d-flex flex-column p-0"><a className="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#"><img src="assets/img/clipboard-image-1.png" style={{width: '67px', height: '67px', filter: 'invert(100%)'}} />
+                <div className="container-fluid d-flex flex-column p-0"><a className="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#"><img src={logo} style={{width: '67px', height: '67px', filter: 'invert(100%)'}} />
                     <div className="sidebar-brand-icon rotate-n-15" />
                     <div className="sidebar-brand-text mx-3"><span>MEDS TO GO</span></div>
                   </a>
                   <hr className="sidebar-divider my-0" />
-                  <ul className="navbar-nav text-light" id="accordionSidebar">
+                  <ul className="navbar-nav text-light" id="accordionSidebar" style={{}}>
                     <li className="nav-item"><a className="nav-link active" href="index.html"><i className="fas fa-tachometer-alt" /><span>Dashboard</span></a></li>
                     <li className="nav-item"><a className="nav-link" href="profile.html"><i className="fas fa-user" /><span>Profile</span></a></li>
                     <li className="nav-item"><a className="nav-link" href="table.html"><i className="fas fa-table" /><span>Prescription</span></a></li>
@@ -114,7 +116,7 @@ export default function Home(){
                     <div className="d-sm-flex justify-content-between align-items-center mb-4">
                       <h3 className="text-dark mb-0">Dashboard</h3>
                       <div className="dropdown show"><button className="btn btn-primary dropdown-toggle" aria-expanded="true" data-bs-toggle="dropdown" type="button"><i className="fas fa-shopping-cart fa-sm text-white-50" style={{paddingRight: '10px'}} />Order</button>
-                        <div className="dropdown-menu show"><a className="dropdown-item" href="#" data-toggle="modal" data-target="#modal1" data-bs-target="#modal1" data-bs-toggle="modal">New medication</a><a className="dropdown-item" href="#" data-bs-target="#modal-3" data-bs-toggle="modal">Request Refill</a><a className="dropdown-item" href="#" data-bs-target="#modal-2" data-bs-toggle="modal">Order Refill</a></div>
+                        <div className="dropdown-menu"><a className="dropdown-item" href="#" data-toggle="modal" data-target="#modal1" data-bs-target="#modal1" data-bs-toggle="modal">New medication</a><a className="dropdown-item" href="#" data-bs-target="#modal-2" data-bs-toggle="modal">Order Refill</a><a className="dropdown-item" href="#" data-bs-target="#modal-3" data-bs-toggle="modal">Request Refill</a></div>
                       </div>
                     </div>
                     <div className="row">

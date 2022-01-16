@@ -1,12 +1,22 @@
+For resigtering 
+
+
+
+
+
+
+
+
+--------------------
 customer {
 id,
 firstName: string,
 lastName: string,
-cardId: number,
+cardId: number, -- Later
 email: string,
 password: string,
 prescription: [],
-orders: [#1],
+orders: [#1], -- Later
 }
 
 pharmacy = {
@@ -23,13 +33,3 @@ time: ?? (dont know yet),
 
 pickup: boolean, // true, ->
 }
-
-order {
-id: 1,
-orderedBY: user1
-}
-//
-
-- create an account
-
-/signup

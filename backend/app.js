@@ -2,7 +2,10 @@ const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const config = require("./utils/config");
-const userRouter = require("./routes/loginRouter");
+
+const loginRouter = require("./routes/loginRouter");
+const userRouter = require("./routes/userRouter");
+
 const app = express();
 
 mongoose
@@ -19,5 +22,8 @@ mongoose
 
 // app.use(express.static("build"));
 app.use(express.json());
+
+app.use("/api/login", loginRouter);
+app.use("/users", userRouter);
 
 module.exports = app;

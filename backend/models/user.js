@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
 
+// ! Will add "orders" later
 const userSchema = new mongoose.Schema({
-  username: String,
-  name: String,
+  firstName: String,
+  lastName: String,
+  email: String,
   password: String,
 });
 

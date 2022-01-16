@@ -1,5 +1,6 @@
 import Home from './pages/Home';
 import Login from './pages/Login';
+import Profile from './pages/Profile'
 import React from 'react';
 import { render } from "react-dom";
 
@@ -15,7 +16,7 @@ function App(){
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login/>} />
-      {/* <Route path="invoices" element={<Invoices />} /> */}
+      <Route path="/profile" element={<Profile/>} />
     </Routes>
   </BrowserRouter>)
 }

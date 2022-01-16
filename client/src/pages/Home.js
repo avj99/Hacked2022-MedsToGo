@@ -1,20 +1,29 @@
-import React from 'react'
+import React, {useState, useRef, useEffect} from 'react';
+import { Link } from "react-router-dom";
+import "../assets/bootstrap/css/bootstrap.min.css"
 
 export default function Home(){
+
+
+    function handleFormInput(e){
+      
+    }
+
+    const inputRef = useRef()
+
+
     return (
             <div id="wrapper">
               <nav className="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
-                <div className="container-fluid d-flex flex-column p-0"><a className="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#"><img src="assets/img/clipboard-image-1.png" style={{width: '67px', height: '67px', filter: 'invert(100%)'}} />
+                <div className="container-fluid d-flex flex-column p-0"><a className="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#"><img src="https://cdn.discordapp.com/attachments/928503509391900807/932163482412003358/clipboard-image-1.png" style={{width: '67px', height: '67px', filter: 'invert(100%)'}} />
                     <div className="sidebar-brand-icon rotate-n-15" />
                     <div className="sidebar-brand-text mx-3"><span>MEDS TO GO</span></div>
                   </a>
                   <hr className="sidebar-divider my-0" />
                   <ul className="navbar-nav text-light" id="accordionSidebar">
-                    <li className="nav-item"><a className="nav-link active" href="index.html"><i className="fas fa-tachometer-alt" /><span>Dashboard</span></a></li>
-                    <li className="nav-item"><a className="nav-link" href="profile.html"><i className="fas fa-user" /><span>Profile</span></a></li>
-                    <li className="nav-item"><a className="nav-link" href="table.html"><i className="fas fa-table" /><span>Prescription</span></a></li>
-                    <li className="nav-item" />
-                    <li className="nav-item"><a className="nav-link" href="register.html"><i className="fa fa-sign-out" /><span>Log out</span></a></li>
+                    <li className="nav-item"><Link className="nav-link active" to="/"><i className="fas fa-tachometer-alt fa-5x" /><span class="custom-text">Dashboard</span></Link></li>
+                    <li className="nav-item"><Link className="nav-link" to="/Profile"><i className="fas fa-user fa-5x" /><span class="custom-text">Profile</span></Link></li>
+                    <li className="nav-item"><Link className="nav-link" to="/Login"><i className="fa fa-sign-out fa-5x" /><span class="custom-text">Log out</span></Link></li>
                   </ul>
                   <div className="text-center d-none d-md-inline"><button className="btn rounded-circle border-0" id="sidebarToggle" type="button" /></div>
                 </div>
@@ -114,17 +123,16 @@ export default function Home(){
                     <div className="d-sm-flex justify-content-between align-items-center mb-4">
                       <h3 className="text-dark mb-0">Dashboard</h3>
                       <div className="dropdown show"><button className="btn btn-primary dropdown-toggle" aria-expanded="true" data-bs-toggle="dropdown" type="button"><i className="fas fa-shopping-cart fa-sm text-white-50" style={{paddingRight: '10px'}} />Order</button>
-                        <div className="dropdown-menu show"><a className="dropdown-item" href="#" data-toggle="modal" data-target="#modal1" data-bs-target="#modal1" data-bs-toggle="modal">New medication</a><a className="dropdown-item" href="#" data-bs-target="#modal-3" data-bs-toggle="modal">Request Refill</a><a className="dropdown-item" href="#" data-bs-target="#modal-2" data-bs-toggle="modal">Order Refill</a></div>
-                      </div>
+                      <div className="dropdown-menu"><a className="dropdown-item" href="#" data-toggle="modal" data-target="#modal1" data-bs-target="#modal1" data-bs-toggle="modal">New medication</a><a className="dropdown-item" href="#" data-bs-target="#modal-2" data-bs-toggle="modal">Order Refill</a><a className="dropdown-item" href="#" data-bs-target="#modal-3" data-bs-toggle="modal">Request Refill</a></div>                      </div>
                     </div>
                     <div className="row">
                       <div className="col-md-6 col-xl-3 mb-4">
-                        <div className="card shadow border-start-primary py-2">
+                        <div className="card shadow border-start-primary py-2 custom-padding">
                           <div className="card-body">
                             <div className="row align-items-center no-gutters">
                               <div className="col me-2">
-                                <div className="text-uppercase text-primary fw-bold text-xs mb-1"><span>CURRENT ORDER</span></div>
-                                <div className="text-dark fw-bold h5 mb-0"><span>PROCESSING</span></div>
+                                <div className="text-uppercase text-primary fw-bold text-xs mb-1 custom-text"><span>CURRENT ORDER</span></div>
+                                <div className="text-dark fw-bold h5 mb-0 custom-text"><span>PROCESSING</span></div>
                               </div>
                               <div className="col-auto"><i className="fas fa-box fa-2x text-gray-300" /></div>
                             </div>
@@ -132,12 +140,12 @@ export default function Home(){
                         </div>
                       </div>
                       <div className="col-md-6 col-xl-3 mb-4">
-                        <div className="card shadow border-start-success py-2">
+                        <div className="card shadow border-start-success py-2 custom-padding">
                           <div className="card-body">
                             <div className="row align-items-center no-gutters">
                               <div className="col me-2">
-                                <div className="text-uppercase text-success fw-bold text-xs mb-1"><span>Active medications</span></div>
-                                <div className="text-dark fw-bold h5 mb-0"><span>7</span></div>
+                                <div className="text-uppercase text-success fw-bold text-xs mb-1 custom-text"><span>Active medications</span></div>
+                                <div className="text-dark fw-bold h5 mb-0 custom-text"><span>7</span></div>
                               </div>
                               <div className="col-auto"><i className="fas fa-file-medical fa-2x text-gray-300" /></div>
                             </div>
@@ -145,14 +153,14 @@ export default function Home(){
                         </div>
                       </div>
                       <div className="col-md-6 col-xl-3 mb-4">
-                        <div className="card shadow border-start-info py-2">
+                        <div className="card shadow border-start-info py-2 custom-padding">
                           <div className="card-body">
                             <div className="row align-items-center no-gutters">
                               <div className="col me-2">
-                                <div className="text-uppercase text-info fw-bold text-xs mb-1"><span>REFILLS</span></div>
+                                <div className="text-uppercase text-info fw-bold text-xs mb-1 custom-text"><span>REFILLS</span></div>
                                 <div className="row g-0 align-items-center">
                                   <div className="col-auto">
-                                    <div className="text-dark fw-bold h5 mb-0 me-3"><span>10</span></div>
+                                    <div className="text-dark fw-bold h5 mb-0 me-3 custom-text"><span>10</span></div>
                                   </div>
                                 </div>
                               </div>
@@ -162,12 +170,12 @@ export default function Home(){
                         </div>
                       </div>
                       <div className="col-md-6 col-xl-3 mb-4">
-                        <div className="card shadow border-start-warning py-2">
+                        <div className="card shadow border-start-warning py-2 custom-paddi">
                           <div className="card-body">
                             <div className="row align-items-center no-gutters">
                               <div className="col me-2">
-                                <div className="text-uppercase text-warning fw-bold text-xs mb-1"><span>TOTAL SPENDING</span></div>
-                                <div className="text-dark fw-bold h5 mb-0"><span>$339.26</span></div>
+                                <div className="text-uppercase text-warning fw-bold text-xs mb-1 custom-text"><span>TOTAL SPENDING</span></div>
+                                <div className="text-dark fw-bold h5 mb-0 custom-text"><span>$339.26</span></div>
                               </div>
                               <div className="col-auto"><i className="fas fa-dollar-sign fa-2x text-gray-300" /></div>
                             </div>
@@ -179,7 +187,7 @@ export default function Home(){
                   <div style={{margin: '22px'}}>
                     <div className="card shadow mb-4" style={{marginBottom: '105px'}}>
                       <div className="card-header d-flex justify-content-between align-items-center">
-                        <h6 className="text-primary fw-bold m-0">Current Orders</h6>
+                        <h6 className="text-primary fw-bold m-0 custom-text">Current Orders</h6>
                         <div className="dropdown no-arrow"><button className="btn btn-link btn-sm dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button"><i className="fas fa-ellipsis-v text-gray-400" /></button>
                           <div className="dropdown-menu shadow dropdown-menu-end animated--fade-in">
                             <p className="text-center dropdown-header">dropdown header:</p><a className="dropdown-item" href="#">&nbsp;Action</a><a className="dropdown-item" href="#">&nbsp;Another action</a>
@@ -201,7 +209,7 @@ export default function Home(){
                                 </div>
                                 <div className="col-md-4 col-xxl-4">
                                   <h4 style={{textAlign: 'center'}}>Accepted</h4>
-                                  <p className="text-center">Expected delivery date: Jan 17</p>
+                                  <p className="text-center custom-text">Expected delivery date: Jan 17</p>
                                 </div>
                               </div>
                             </div>
@@ -230,7 +238,7 @@ export default function Home(){
                   <div style={{margin: '22px'}}>
                     <div className="card shadow mb-4">
                       <div className="card-header d-flex justify-content-between align-items-center">
-                        <h6 className="text-primary fw-bold m-0">Past Orders</h6>
+                        <h6 className="text-primary fw-bold m-0 custom-text">Past Orders</h6>
                         <div className="dropdown no-arrow"><button className="btn btn-link btn-sm dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button"><i className="fas fa-ellipsis-v text-gray-400" /></button>
                           <div className="dropdown-menu shadow dropdown-menu-end animated--fade-in">
                             <p className="text-center dropdown-header">dropdown header:</p><a className="dropdown-item" href="#">&nbsp;Action</a><a className="dropdown-item" href="#">&nbsp;Another action</a>

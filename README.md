@@ -4,4 +4,4 @@ Meds To Go is a website that allows users to order their prescription medication
 
 
 
-Visit:  www.medstogo.tech
+Visit:https://devpost.com/software/bugsquashers
